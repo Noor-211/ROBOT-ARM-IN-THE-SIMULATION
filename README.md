@@ -34,19 +34,21 @@ Add the “arduino_robot_arm” package to “src” folder
  
 Install all the dependencies 
 
-	`$ cd ~/catkin_ws`
+```````
+	$ cd ~/catkin_ws
 
-	`$ rosdep install --from-paths src --ignore-src -r -y`
+	$ rosdep install --from-paths src --ignore-src -r -y
 
-	`$ sudo apt-get install ros-melodic-moveit`
+	$ sudo apt-get install ros-melodic-moveit
 
-	`$ sudo apt-get install ros-melodic-joint-state-publisher ros-melodic-joint-state-publisher-gui`
+        $ sudo apt-get install ros-melodic-joint-state-publisher ros-melodic-joint-state-publisher-gui
 
-	`$ sudo apt-get install ros-melodic-gazebo-ros-control joint-state-publisher`
+	$ sudo apt-get install ros-melodic-gazebo-ros-control joint-state-publisher
 
-	`$ sudo apt-get install ros-melodic-ros-controllers ros-melodic-ros-control Compile the package`
+	$ sudo apt-get install ros-melodic-ros-controllers ros-melodic-ros-control Compile the package
 
-        `$ catkin_make`
+        $ catkin_make
+```````
 
 # 
 
@@ -61,17 +63,21 @@ Install all the dependencies
 
   2. install rosserial by this code :
 
-   `$sudo apt-get install ros-kinetic-rosserial-arduino`
+   ```
+   $sudo apt-get install ros-kinetic-rosserial-arduino
 
-   `$sudo apt-get install ros-kinetic-rosserial`
+   $sudo apt-get install ros-kinetic-rosserial
+   ```
 
   3. Install the ros_lib library on the Arduino :
 
-   `$ cd <sketchbook>/libraries`
+   ```
+   $ cd <sketchbook>/libraries
 
-   `$ rm -rf ros_lib`
+   $ rm -rf ros_li
 
-   `$ rosrun rosserial_arduino make_libraries.py .`
+  $ rosrun rosserial_arduino make_libraries.py .
+  ```
 # 
 - Run Rviz
 
@@ -80,34 +86,42 @@ Install all the dependencies
 - Controlling the motors in simulation :
 
   first : 
+```
+  $ cd catkin_ws
 
- ` $ cd catkin_ws`
+  $ sourse devel/setup.bash
 
-  `$ sourse devel/setup.bash`
-
-  `$ roslaunch robot_arm_pkg check_motors.launch`
-
+  $ roslaunch robot_arm_pkg check_motors.launch
+```
   other terminal :
 
-  `$ cd catkin_ws`
+ ```
+  $ cd catkin_ws
 
-  `$ sourse devel/setup.bash`
+  $ sourse devel/setup.bash
 
-  `$ roslaunch robot_arm_pkg check_motors_gazebo.launch`
+  $ roslaunch robot_arm_pkg check_motors_gazebo.launch
+  
+```
 
   change the permission :
+  
 
-`  $ cd catkin/src/arduino_robot_arm/robot_arm_pkg/scripts`
+``` 
+$ cd catkin/src/arduino_robot_arm/robot_arm_pkg/scripts
 
-`$ sudo chmod +x joint_states_to_gazebo.py`
+$ sudo chmod +x joint_states_to_gazebo.py
+```
 
   then : 
 
-`  $ cd catkin_ws`
+```
+$ cd catkin_ws
 
-  `$ sourse devel/setup.bash`
+  $ sourse devel/setup.bash
 
-  `$ rosrun robot_arm_pkg joint_states_to_gazebo.py`
+  $ rosrun robot_arm_pkg joint_states_to_gazebo.py
+  ```
 # 
 - movelt in Rviz :
 
